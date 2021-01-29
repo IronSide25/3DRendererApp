@@ -1,0 +1,27 @@
+﻿<Window x:Class="Grafika4a.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Grafika4a"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="MainWindow" Height="1080" Width="1600">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="480" Margin="10,31,0,0" VerticalAlignment="Top" Width="600" Name ="RenderImage"/>
+        <Image HorizontalAlignment="Left" Height="480" Margin="10,516,0,0" VerticalAlignment="Top" Width="600" Name ="Ortho1" MouseMove="Ortho1MouseMove"/>
+        <Image HorizontalAlignment="Left" Height="480" Margin="620,516,0,0" VerticalAlignment="Top" Width="600" Name ="Ortho2" MouseMove="Ortho2MouseMove"/>
+        <Image HorizontalAlignment="Left" Height="480" Margin="620,31,0,0" VerticalAlignment="Top" Width="600" Name ="Ortho3" MouseMove="Ortho3MouseMove"/>
+        <TextBlock HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="115" Name ="FPSTextBlock" Foreground="White" Background="Black" Margin="10,0,0,0"/>
+        <Slider HorizontalAlignment="Left" Height="22" Margin="1225,63,0,0" VerticalAlignment="Top" Width="357" Minimum="1" Maximum="89" Name ="FOVSlider" TickFrequency="1" IsSnapToTickEnabled="True" Value="60"/>
+        <TextBlock HorizontalAlignment="Left" Height="27" Margin="1516,31,0,0" TextWrapping="Wrap" Text="{Binding ElementName=FOVSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="66" Name ="FOVTextBlock" />
+        <CheckBox Content="Reverse backface culling" HorizontalAlignment="Left" Height="26" Margin="1225,114,0,0" VerticalAlignment="Top" Width="169" Name="CullingToggle" Click="BackfaceCullingToggleClick"/>
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"  Margin="1225,177,0,0" SelectedIndex="1" Name="RenderModeComboBox">
+            <ComboBoxItem>Points</ComboBoxItem>
+            <ComboBoxItem>Wireframe</ComboBoxItem>
+            <ComboBoxItem>Solid</ComboBoxItem>
+            <ComboBoxItem>Textured</ComboBoxItem>
+        </ComboBox>
+
+    </Grid>
+</Window>
